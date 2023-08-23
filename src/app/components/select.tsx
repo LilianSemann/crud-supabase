@@ -1,10 +1,11 @@
+
 import { Selecting, Updating } from "./functions"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 export default async function Select() {
 
     const todos = await Selecting()
-    
+
     return(
         <div className="w-auto flex justify-center h-screen pt-10">
             <div className="w-4/6 flex justify-center">

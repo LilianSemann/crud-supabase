@@ -17,9 +17,5 @@ export async function Inserting(settings: Config) {
 }
 
 export async function Updating(settings: Config) {
-    await sql`UPDATE todolist SET is_complete=true WHERE ${settings.id}`
-}
-
-export async function Edit(settings: Config) {
-    await sql``
+    await sql`UPDATE todolist SET title = ${settings.title} and is_complete = ${settings.is_complete} WHERE ${settings.id}`
 }
