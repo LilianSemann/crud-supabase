@@ -32,7 +32,7 @@ export default async function Select() {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {todos.map((t:Config) => (
+                    {todos.map((t:Config) => (
                             <Edit todos={t} key={t.id}>
                                 <p>
                                     {t.id}
@@ -41,18 +41,10 @@ export default async function Select() {
                                     {t.title}
                                 </p>
                             </Edit>
-                        ))}
+                    ))}
                     </TableBody>
                 </Table>
             </div>
         </div>
     )
 }
-
-{/* <TableRow key={t.id}>
-<TableCell className="text-center">{t.id}</TableCell>
-<TableCell>
-    <button>{t.title}</button>
-</TableCell>
-<TableCell></TableCell>
-</TableRow> */}
