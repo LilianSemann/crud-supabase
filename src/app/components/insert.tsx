@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Config, Inserting } from "./functions"
+import { Inserting } from "./functions"
+import { Config } from "./types"
 
 export default function Insert() {
 

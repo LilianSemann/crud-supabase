@@ -1,12 +1,7 @@
 "use server"
 
 import sql from "../db"
-
-export type Config = {
-    id: number,
-    title: string,
-    is_complete: boolean
-}
+import { Config } from "./types"
 
 export async function Selecting() {
     return (await sql`SELECT * FROM todolist`).map(i => ({id:i.id, title:i.title}))
@@ -17,5 +12,5 @@ export async function Inserting(settings: Config) {
 }
 
 export async function Updating(settings: Config) {
-    await sql`UPDATE todolist SET title = ${settings.title} AND is_complete = ${settings.is_complete} WHERE ${settings.id}`
+    await sql`UPDATE todolist SET title = ${settings.title} WHERE ${settings.id}`
 }
