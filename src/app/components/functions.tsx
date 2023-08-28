@@ -1,12 +1,7 @@
 "use server"
 
 import sql from "../db"
-
-export type Config = {
-    id: number,
-    title: string,
-    is_complete: boolean
-}
+import { Config } from "./types"
 
 export async function Selecting() {
     return (await sql`SELECT * FROM todolist`).map(i => ({id:i.id, title:i.title}))
