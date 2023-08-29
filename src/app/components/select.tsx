@@ -13,7 +13,7 @@ export default async function Select() {
     return(
         <div className="w-auto flex justify-center h-screen pt-10">
             <div className="w-4/6 flex justify-center">
-                <Table className="bg-white rounded-xl">
+            <Table className="bg-white rounded-xl">
                     <TableHeader>
                         <TableRow>
                             <TableHead className="text-gray-400 w-[20%]">
@@ -32,16 +32,16 @@ export default async function Select() {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                    {todos.map((t:Config) => (
-                            <Edit todos={t} key={t.id}>
-                                <p>
-                                    {t.id}
-                                </p>
-                                <p>
-                                    {t.title}
-                                </p>
-                            </Edit>
-                    ))}
+                        <TableRow>
+                            <TableCell>
+                                {todos.map((t:Config) => (
+                                    <Edit todos={t} key={t.id}>
+                                        {t.id}
+                                        {t.title}
+                                    </Edit>
+                                ))}
+                                </TableCell>
+                        </TableRow>
                     </TableBody>
                 </Table>
             </div>
