@@ -4,6 +4,7 @@ import Select from "./components/select"
 export default function Home() {
   return (
     <div>
+      <Insert/>
       <Select/>
     </div>
   )

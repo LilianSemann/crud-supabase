@@ -11,6 +11,10 @@ export async function Inserting(settings: Config) {
     await sql`INSERT INTO todolist (title) VALUES (${settings.title})`
 }
 
+export async function Deleting(settings: number){
+    await sql`DELETE FROM todolist WHERE id=${settings}`
+  }  
+
 export async function Updating(settings: Config) {
     await sql`UPDATE todolist SET title = ${settings.title} WHERE ${settings.id}`
 }

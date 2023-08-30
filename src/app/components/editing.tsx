@@ -5,30 +5,30 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
 import { ReactNode, useState } from 'react'
-import { Config } from "./types"
-import { Updating } from './functions'
+import { Config, defaultConfig } from "./types"
+import { Deleting, Updating } from './functions'
 
-type Props = {
+interface Props {
     children: ReactNode
-    todos: Config
+    ptodos: Config
 }
 
 export default function Edit(props: Props) {
 
-    const [edited, setEdited] = useState(props.todos)
+    const [edited, setEdited] = useState(defaultConfig)
 
     return (
         <div className="flex">
             {props.children}
-
             <Dialog>
                 <DialogTrigger>Edit</DialogTrigger>
                 <DialogContent>
                     <DialogHeader>
-                        <DialogTitle>Yo</DialogTitle>
+                        <DialogTitle>I'm gonna commit suicide</DialogTitle>
                         <DialogDescription>
-                            <Input type="text" defaultValue={props.todos.title} className="border text-black" onChange={(e) => setEdited({...edited, title:e.target.value})}/>
-                            <Button onClick={() => {Updating(edited); window.location.reload()}} >editar</Button>                         
+                            <Input type="text" defaultValue={props.ptodos.title} onChange={(e) => setEdited({...props.ptodos, title:e.target.value})} className="border text-black"/>
+                            <Button type="submit" onClick={() => {Deleting(props.ptodos.id || 0); window.location.reload()}} >delete</Button>
+                            <Button onClick={() => {Updating(edited); console.log(edited)}} >edit</Button>                         
                         </DialogDescription>
                     </DialogHeader>
                 </DialogContent>
