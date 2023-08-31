@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 
 import { ReactNode, useState } from 'react'
 import { Config, defaultConfig } from "./types"
-import { Deleting, Updating } from './functions'
+import { deleting, updating } from './functions'
 
 interface Props {
     children: ReactNode
@@ -27,8 +27,8 @@ export default function Edit(props: Props) {
                         <DialogTitle>I'm gonna commit suicide</DialogTitle>
                         <DialogDescription>
                             <Input type="text" defaultValue={props.ptodos.title} onChange={(e) => setEdited({...props.ptodos, title:e.target.value})} className="border text-black"/>
-                            <Button type="submit" onClick={() => {Deleting(props.ptodos.id || 0); window.location.reload()}} >delete</Button>
-                            <Button onClick={() => {Updating(edited); console.log(edited)}} >edit</Button>                         
+                            <Button type="submit" onClick={() => {deleting(props.ptodos.id || 0); window.location.reload()}} >delete</Button>
+                            <Button onClick={() => {updating(edited); console.log(edited)}} >edit</Button>                         
                         </DialogDescription>
                     </DialogHeader>
                 </DialogContent>
