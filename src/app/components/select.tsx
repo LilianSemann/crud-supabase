@@ -1,5 +1,5 @@
 
-import { Selecting } from "./functions"
+import { selecting } from "./functions"
 import { Config } from "./types"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 

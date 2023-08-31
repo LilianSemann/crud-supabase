@@ -15,8 +15,8 @@ export default function Insert() {
     return (
         <div className="flex justify-center gap-3 pt-7">
             <form className="bg-white p-3 rounded-xl w-2/5">
-                <input type="text" placeholder="Type a new task" onChange={(e) => setTodos({...todos, title:e.target.value})} className="outline-none bg-transparent w-5/6"/>
-                <button onClick={() => inserting(todos)} className="w-2/12 text-center">Add</button>
+                <input type="text" placeholder="Type a new task" onChange={(e) => setTodos({...todos, title:e.target.value})} className="outline-none bg-transparent w-11/12"/>
+                <button onClick={() => inserting(todos)} className="w-1/12 text-center">Add</button>
             </form>
         </div>
     )
